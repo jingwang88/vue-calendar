@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans">
+<head>
+	<meta charset="utf-8">
+	<title>VUE日历插件</title>
+	<style type="text/css">
+		.calendar-container {
+			font-family: Microsoft YaHei;
+			width: 1000px; 
+			height: 1000px;
+			margin: 100px auto;
+		}
+		.date-table {
+			margin-top: 20px;
+			color: #4A4A4A;
+			font-size: 18px;
+			border:  1px solid #eee;
+		}
+		.date-table td {
+			width: 130px;
+			height: 70px;
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid #F1EBE4;
+		}
+		.date-table thead .year-month-selector {
+			text-align: center;
+			vertical-align: middle;
+			height: 35px;
+		}
+		.year-month-selector .year-selector {
+			font-size: 18px;
+		}
+		.year-selector .btn {
+			cursor: pointer;
+		}
+		.year-selector select {
+			display: inline-block;
+			height: 20px;
+			width: 80px;
+			padding: 0 20px;
+			vertical-align: middle;
+			margin: 0 25px;
+			border:  none;
+			outline: none;
+			-webkit-appearance: none;
+		}
+		.year-month-selector .month-selector {
+			font-size: 20px;
+			padding-left: 100px;
+		}
+		.month-selector .btn {
+			cursor: pointer;
+		}
+		.month-selector select {
+			display: inline-block;
+			height: 20px;
+			width: 100px;
+			padding: 0 20px;
+			vertical-align: middle;
+			margin: 0 25px;
+			border:  none;
+			outline: none;
+			-webkit-appearance: none;
+		}
+		.date-table thead .week-list {
+			background-color: #FBEC9C;
+		}
+		.date-table thead .week-list td {
+			height: 50px;
+		}
+		.date-table .date-list {
+			font-size: 25px;
+			font-weight: 700;
+		}
+		.date-list tr td:hover {
+			cursor: pointer;
+			border: 1px solid orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="calendar-container" id="calendarContainer">
+		<input type="text" name="calendarSelector" id="calendarSelector">
+		<calendar-selector> 
+		</calendar-selector>
+	</div>
+	<script type="text/javascript" src="./vue.js"></script>
+	<script type="text/javascript" src="./calendar_select.js"></script>
+</body>
+</html>

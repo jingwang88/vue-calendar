@@ -64,7 +64,6 @@ Vue.component('calender-selector', {
 			this.selectedYear = this.selectedYear>1900 ? this.selectedYear-1 : this.selectedYear;
 		},
 		preMonth: function () {
-			this.selectedMonth = this.selectedMonth>0 ? this.selectedMonth-1 : this.selectedMonth;
 			if (this.selectedMonth > 0) {
 				this.selectedMonth--;
 			} else {
@@ -89,7 +88,7 @@ Vue.component('calender-selector', {
 		handleClick: function (date) {
 			if (date) {
 				this.selectedDay = date;
-				this.$emit('choose', (this.selectedYear + '-' + this.selectedMonth + '-' + this.selectedDay));
+				this.$emit('choose', (this.selectedYear + '-' + (this.selectedMonth+1) + '-' + this.selectedDay));
 			}
 		}
 	},

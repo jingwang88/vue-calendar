@@ -6,7 +6,7 @@
 	<style type="text/css">
 		.calendar-container {
 			font-family: Microsoft YaHei;
-			width: 1000px; 
+			width: 1000px;
 			height: 1000px;
 			margin: 100px auto;
 		}
@@ -99,9 +99,9 @@
 	</style>
 </head>
 <body>
-	<div class="calendar-container" id="calendarContainer" >
+	<div class="calendar-container" id="calendarContainer" v-on:blur="">
 		<input type="text" name="calendarSelector" id="calendarSelector" 
-			v-model="date" 
+			v-model="date"
 			v-bind:value="date" 
 			v-on:focus="handleInputFocus">
 		<transition name="toggle-display">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-hans">
+<html lang="zh-cn">
 <head>
 	<meta charset="utf-8">
 	<title>VUE日历插件</title>
@@ -44,6 +44,10 @@
 			border:  none;
 			outline: none;
 			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+		select::-ms-expand {
+			display: none;
 		}
 		.year-month-selector .month-selector {
 			font-size: 20px;
@@ -77,13 +81,33 @@
 			cursor: pointer;
 			border: 1px solid orange;
 		}
+		.today {
+			background-color: #fbec9c;
+		}
+		.toggle-display-enter {
+			opacity: 0;
+			margin-top: -200px;
+		}
+		.toggle-display-enter-active {
+			 transition: all 0.6s ease;
+		}
+		.toggle-display-leave-active {
+			opacity: 0;
+			margin-top: -200px;
+			transition: all 0.6s ease;
+		}
 	</style>
 </head>
 <body>
-	<div class="calendar-container" id="calendarContainer">
-		<input type="text" name="calendarSelector" id="calendarSelector">
-		<calendar-selector> 
-		</calendar-selector>
+	<div class="calendar-container" id="calendarContainer" >
+		<input type="text" name="calendarSelector" id="calendarSelector" 
+			v-model="date" 
+			v-bind:value="date" 
+			v-on:focus="handleInputFocus">
+		<transition name="toggle-display">
+			<calender-selector v-on:choose="dateChange" v-if="isCallendarDisplay">
+			</calender-selector>
+		</transition>
 	</div>
 	<script type="text/javascript" src="./vue.js"></script>
 	<script type="text/javascript" src="./calendar_select.js"></script>
